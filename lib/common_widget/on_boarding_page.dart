@@ -1,15 +1,18 @@
+
 import 'package:flutter/material.dart';
-import 'package:fitness_tracker/common/color_extension.dart';
+
+import '../common/colo_extension.dart';
 
 class OnBoardingPage extends StatelessWidget {
-  const OnBoardingPage({super.key, required this.pOBj});
-
-  final pOBj;
+  final Map pObj;
+  const OnBoardingPage({super.key, required this.pObj});
 
   @override
   Widget build(BuildContext context) {
-    var media = MediaQuery.of(context).size;
-    return SizedBox(
+     var media = MediaQuery.of(context).size;
+    return 
+    
+    SizedBox(
       width: media.width,
       height: media.height,
       child: Column(
@@ -17,32 +20,32 @@ class OnBoardingPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Image.asset(
-            pOBj["image"].toString(),
+            pObj["image"].toString(),
             width: media.width,
             fit: BoxFit.fitWidth,
           ),
-          SizedBox(height: media.height * 0.1),
+          SizedBox(
+            height: media.width * 0.1,
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Text(
-              pOBj["title"].toString(),
+              pObj["title"].toString(),
               style: TextStyle(
-                color: TColor.black,
-                fontSize: 24,
-                fontWeight: FontWeight.w700,
-              ),
+                  color: TColor.black,
+                  fontSize: 24,
+                  fontWeight: FontWeight.w700),
             ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Text(
-              pOBj["subtitle"].toString(),
+              pObj["subtitle"].toString(),
               style: TextStyle(color: TColor.gray, fontSize: 14),
             ),
           ),
         ],
       ),
     );
-    ;
   }
 }
